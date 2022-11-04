@@ -19,3 +19,24 @@ exports.updateThing = (req, res, next) => {
     )
     .catch(() => res.status(400).json({ error }))
 }
+
+exports.deleteThing = (req, res, next) => {
+  Thing.deleteOne({ _id: req.params.id })
+    .then(() =>
+      res.status(200).json({ message: 'Objet supprimé avec succes !' }),
+    )
+    .catch((error) => res.status(400).json({ error }))
+}
+
+// Rend le site dynamique en pouvant cliquer sur l'objet et voir les infoirmations
+exports.getOneThing = (req, res, next) => {
+  Thing.findOne({ _id: req.params.id })
+    .then((things) => res.status(200).json(things))
+    .catch((error) => res.status(400).json({ error }))
+}
+
+exports.getAllThing = (req, res, next) => {
+  Thing.find()
+    .then((things) => res.status(200).json(things))
+    .catch((error) => res.status(400).json({ error }))
+}
