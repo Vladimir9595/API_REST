@@ -8,7 +8,7 @@ const mongoose = require('mongoose')
 
 mongoose
   .connect(
-    'mongodb+srv://Vlad:Vladimir67@cluster0.0m8wbwz.mongodb.net/?retryWrites=true&w=majority',
+    'mongodb+srv://XXX:XXX@cluster0.0m8wbwz.mongodb.net/?retryWrites=true&w=majority',
     { useNewUrlParser: true, useUnifiedTopology: true },
   )
   .then(() => console.log('Connexion à MongoDB réussie !'))
