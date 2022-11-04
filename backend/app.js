@@ -3,6 +3,7 @@ const express = require('express') // C'est la manière dont JS gère les module
 // const Thing = require('./models/Thing')
 
 const stuffRoutes = require('./routes/stuff')
+const userRoutes = require('./routes/user')
 
 const mongoose = require('mongoose')
 
@@ -33,7 +34,8 @@ app.use((req, res, next) => {
   next()
 })
 
-app.use('/api/stuff/', stuffRoutes)
+app.use('/api/stuff', stuffRoutes)
+app.use('/api/auth', userRoutes)
 
 // app.post('/api/stuff/', (req, res, next) => {
 //   delete req.body._id
